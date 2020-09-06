@@ -26,6 +26,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
+    'core.apps.CoreConfig',
+
     'rest_framework',
     'corsheaders',
 ]
@@ -60,6 +62,10 @@ TEMPLATES = [
     },
 ]
 
+JWT_AUTH = {
+    'JWT_RESPONSE_PAYLOAD_HANDLER': 'mysite.utils.my_jwt_response_handler'
+}
+
 WSGI_APPLICATION = 'mysite.wsgi.application'
 
 
@@ -75,7 +81,7 @@ REST_FRAMEWORK = {
 }
 
 CORS_ORIGIN_WHITELIST = (
-    'localhost:3000',
+    'http://localhost:3000',
 )
 
 
